@@ -4,48 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SkyTrip Travel | あなたの次の旅をもっと特別に</title>
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans JP",sans-serif;background:#f5f9ff;color:#233047;line-height:1.7}
-header{background:#1677ff;color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:24px;font-weight:800}.nav{font-size:14px}
-.hero{text-align:center;padding:72px 20px;background:linear-gradient(135deg,#dff2ff,#fff3d8)}
-.hero h1{font-size:42px;margin:0 0 12px;color:#1262c4}.hero p{font-size:18px}.btn{display:inline-block;margin-top:16px;padding:13px 26px;background:#ff8a00;color:white;border-radius:8px;text-decoration:none;font-weight:bold}
-section{max-width:980px;margin:auto;padding:54px 22px}h2{text-align:center;color:#1262c4;margin-bottom:30px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;padding:24px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.08);border-left:7px solid #1677ff}
-.card:nth-child(2){border-left-color:#ff8a00}.card:nth-child(3){border-left-color:#27ae60}.emoji{font-size:38px}.card h3{margin:8px 0}
-.reasons{background:#eef7ff}.reason{background:#fff;margin:14px 0;padding:18px 22px;border-left:6px solid #7b61ff;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.06)}
-.cta{text-align:center;background:#1677ff;color:#fff;max-width:none}.cta h2{color:#fff}.cta .btn{background:#ff9d21}
-footer{text-align:center;padding:24px;background:#17324d;color:#dce9f5}
-@media(max-width:700px){.cards{grid-template-columns:1fr}.hero h1{font-size:32px}.nav{display:none}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans JP",sans-serif;background:#fff;color:#202733;line-height:1.7}
+header{height:68px;background:#fff;border-bottom:1px solid #e6e9ed;padding:0 7%;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:#0b4f91;letter-spacing:.2px}
+.logo svg{width:25px;height:25px}
+.nav{display:flex;gap:28px;font-size:14px;color:#4b5563}
+.nav a{color:inherit;text-decoration:none}
+.hero{padding:82px 22px 76px;background:#f3f7fa;text-align:center;border-bottom:1px solid #e8edf1}
+.hero-mark{width:48px;height:48px;margin:0 auto 22px;color:#0b4f91}
+.hero h1{font-size:42px;line-height:1.35;margin:0 0 16px;color:#17324d;letter-spacing:.02em}
+.hero p{font-size:17px;color:#536273;margin:0 auto;max-width:620px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:28px;padding:13px 24px;background:#0b4f91;color:#fff;text-decoration:none;font-weight:700;border-radius:4px;font-size:15px}
+.btn svg{width:18px;height:18px}
+section{max-width:1040px;margin:auto;padding:64px 24px}
+.section-head{text-align:left;margin-bottom:28px}
+.section-head .eyebrow{font-size:12px;letter-spacing:.14em;color:#6c7a89;font-weight:700;text-transform:uppercase}
+h2{font-size:28px;color:#17324d;margin:5px 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;padding:26px;border:1px solid #e2e7eb;border-radius:6px}
+.card-icon{width:38px;height:38px;color:#0b4f91;margin-bottom:18px}
+.card h3{margin:0 0 10px;font-size:19px;color:#25364a}
+.card p{font-size:14px;color:#5d6875;margin:0 0 20px}
+.price{display:flex;align-items:center;gap:7px;font-weight:700;color:#17324d}
+.price svg{width:17px;height:17px}
+.reasons-wrap{background:#f7f8fa}
+.reasons{max-width:1040px;padding-top:58px;padding-bottom:58px}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.reason{padding:4px 0}
+.reason-title{display:flex;align-items:center;gap:10px;font-weight:700;color:#25364a;margin-bottom:8px}
+.reason-title svg{width:22px;height:22px;color:#0b4f91}
+.reason p{margin:0;color:#66717e;font-size:14px}
+.cta-wrap{background:#17324d}
+.cta{text-align:center;color:#fff;padding-top:54px;padding-bottom:54px}
+.cta h2{color:#fff;margin:0 0 8px}
+.cta p{color:#d4dde5;margin:0}
+.cta .btn{background:#fff;color:#17324d}
+footer{padding:26px 7%;background:#0f2539;color:#aebdca;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.footer-brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700}
+.footer-brand svg{width:18px;height:18px}
+@media(max-width:700px){
+ header{height:62px;padding:0 6%}.nav{display:none}.logo{font-size:20px}
+ .hero{padding:62px 20px}.hero h1{font-size:34px}.hero p{font-size:16px}
+ section{padding:48px 20px}.cards,.reason-grid{grid-template-columns:1fr}
+ .card{padding:24px}.reason-grid{gap:26px}footer{display:block;text-align:center}.footer-brand{justify-content:center;margin-bottom:7px}
+}
 </style>
 </head>
 <body>
-<header><div class="logo">✈️ SkyTrip Travel 🌏</div><div class="nav">🏠 ホーム　🌴 プラン　✨ 私たちについて　📞 お問い合わせ</div></header>
+<header>
+  <div class="logo"><i data-lucide="plane"></i><span>SkyTrip Travel</span></div>
+  <nav class="nav"><a href="#">ホーム</a><a href="#plans">旅行プラン</a><a href="#about">私たちについて</a><a href="#contact">お問い合わせ</a></nav>
+</header>
+
+<main>
 <div class="hero">
-  <div style="font-size:52px">✈️🌏✨</div>
+  <i class="hero-mark" data-lucide="map"></i>
   <h1>あなたの次の旅を、もっと特別に。</h1>
-  <p>🌈 ワクワクする旅を、もっと自由に。<br>SkyTrip Travelが最高の思い出づくりをお手伝いします！📸💖</p>
-  <a class="btn" href="#plans">🔍 旅行プランを探す ✨</a>
+  <p>国内から海外まで、一人ひとりに合った旅をご提案します。安心できるサポートと、選びやすい旅行プランをお届けします。</p>
+  <a class="btn" href="#plans"><i data-lucide="search"></i>旅行プランを探す</a>
 </div>
+
 <section id="plans">
-<h2>🌴 おすすめ旅行プラン 🌴</h2>
-<div class="cards">
- <div class="card"><div class="emoji">🏝️🌺</div><h3>沖縄リゾートの旅</h3><p>青い海と白い砂浜で最高の休日を！☀️🍹 美しい景色と癒やしの時間を満喫できます。</p><b>💰 49,800円〜</b></div>
- <div class="card"><div class="emoji">🗼🍣</div><h3>東京満喫ツアー</h3><p>人気スポットからグルメまで一気に楽しむ！📸✨ 初めての東京旅行にもおすすめです。</p><b>💰 39,800円〜</b></div>
- <div class="card"><div class="emoji">🌏✈️</div><h3>海外よくばりプラン</h3><p>憧れの海外へ飛び出そう！🎉🧳 あなただけの特別な旅をスタッフがサポートします。</p><b>💰 89,800円〜</b></div>
-</div>
+  <div class="section-head"><div class="eyebrow">Travel Plans</div><h2>おすすめ旅行プラン</h2></div>
+  <div class="cards">
+    <article class="card">
+      <i class="card-icon" data-lucide="palmtree"></i>
+      <h3>沖縄リゾートの旅</h3>
+      <p>青い海と白い砂浜で過ごす、ゆったりとした休日。美しい景色と癒やしの時間をお楽しみください。</p>
+      <div class="price"><i data-lucide="wallet-cards"></i>49,800円〜</div>
+    </article>
+    <article class="card">
+      <i class="card-icon" data-lucide="building-2"></i>
+      <h3>東京満喫ツアー</h3>
+      <p>人気スポットからグルメまで、東京の魅力を効率よく楽しめる定番プランです。</p>
+      <div class="price"><i data-lucide="wallet-cards"></i>39,800円〜</div>
+    </article>
+    <article class="card">
+      <i class="card-icon" data-lucide="earth"></i>
+      <h3>海外よくばりプラン</h3>
+      <p>憧れの海外へ。旅程づくりから現地での過ごし方まで、スタッフが丁寧にサポートします。</p>
+      <div class="price"><i data-lucide="wallet-cards"></i>89,800円〜</div>
+    </article>
+  </div>
 </section>
+
+<div class="reasons-wrap" id="about">
 <section class="reasons">
-<h2>✨ SkyTrip Travelが選ばれる理由 ✨</h2>
-<div class="reason"><b>💖 安心サポート</b><br>旅行前から旅行中まで、スタッフがあなたの旅をしっかりサポート！😊</div>
-<div class="reason"><b>💰 お得な価格</b><br>豊富なプランから、予算にぴったりの旅行をご提案します！🎁</div>
-<div class="reason"><b>🗺️ 豊富な旅行先</b><br>国内から海外まで、あなたの「行きたい！」がきっと見つかります！🌈✨</div>
+  <div class="section-head"><div class="eyebrow">Why SkyTrip</div><h2>選ばれる理由</h2></div>
+  <div class="reason-grid">
+    <div class="reason"><div class="reason-title"><i data-lucide="headphones"></i>安心サポート</div><p>旅行前から旅行中まで、スタッフが必要なときにしっかりサポートします。</p></div>
+    <div class="reason"><div class="reason-title"><i data-lucide="badge-japanese-yen"></i>分かりやすい価格</div><p>豊富な選択肢から、予算や目的に合わせた旅行プランをご提案します。</p></div>
+    <div class="reason"><div class="reason-title"><i data-lucide="map-pinned"></i>豊富な旅行先</div><p>国内から海外まで、多彩な行き先からあなたに合った旅を見つけられます。</p></div>
+  </div>
 </section>
+</div>
+
+<div class="cta-wrap" id="contact">
 <section class="cta">
-<h2>✈️ さあ、次の旅へ出かけよう！ 🌏</h2>
-<p>あなたの理想の旅行をSkyTrip Travelと一緒に見つけませんか？😊✨</p>
-<a class="btn" href="#">📩 無料で相談する 🎉</a>
+  <h2>次の旅を、一緒に考えませんか。</h2>
+  <p>ご希望やご予算に合わせて、旅行プランをご案内します。</p>
+  <a class="btn" href="#"><i data-lucide="mail"></i>無料で相談する</a>
 </section>
-<footer>🌟 SkyTrip Travel 🌟　｜　あなたの旅に、最高のワクワクを。✈️</footer>
+</div>
+</main>
+
+<footer>
+  <div class="footer-brand"><i data-lucide="plane"></i>SkyTrip Travel</div>
+  <div>© 2026 SkyTrip Travel</div>
+</footer>
+<script>lucide.createIcons();</script>
 </body>
 </html>
